@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>String koniec liczby poczatek</title>
+  </head>
+  <body>
+    <script>
+      let wielkosc_tablicy;
+
+      function ile() {
+        do {
+          wielkosc_tablicy = prompt("Ile liczb chcesz podać 10-20? ");
+        } while (isNaN(wielkosc_tablicy));
+      }
+
+      ile();
+
+      if (wielkosc_tablicy <= 10 && wielkosc_tablicy >= 20) {
+        alert("Podałeś zbyt małą liczbę");
+        ile();
+      }
+
+      let tab = [];
+      let element;
+
+      for (let i = 0; i < wielkosc_tablicy; i++) {
+        element = prompt("Podaj elementy tablicy");
+
+        if (element == Number) {
+          tab.unshift(element);
+        } else {
+          tab.push(element);
+        }
+      }
+
+      for (let i = 0; i < wielkosc_tablicy; i++) {
+        document.write(tab[i] + " ");
+      }
+    </script>
+  </body>
+</html>
